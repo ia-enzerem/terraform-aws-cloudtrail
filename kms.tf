@@ -19,9 +19,8 @@ data "aws_iam_policy_document" "cloudtrail_key_policy_document" {
   statement {
     sid    = "Allow CloudTrail to encrypt logs"
     effect = "Allow"
-    principals {
-      type        = "Service"
-      identifiers = ["cloudtrail.amazonaws.com"]
+    "Principal": {
+        "AWS": "arn:aws:iam::237119994776:user/enzerem"
     }
     actions   = ["kms:GenerateDataKey*"]
     resources = ["*"]
